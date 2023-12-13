@@ -2,37 +2,111 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.currency-row-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currency-row-container>div {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.label-input {
+  padding: 5px 0px;
+}
+
+.input-field {
+  padding: 5px 10px;
+}
+
+.convert-button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 15px;
+  pointer-events: auto;
+  cursor: pointer
+}
+
+.convert-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Basic styling for the select element */
+select {
+  padding: 6px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  /* Remove default focus outline */
+  background-color: #fff;
+  /* You can add more styles as per your design */
+}
+
+/* Styling when the select element is hovered */
+select:hover {
+  border-color: #888;
+}
+
+/* Styling when the select element is focused */
+select:focus {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the dropdown arrow */
+select::after {
+  content: '\25BC';
+  /* Unicode for down arrow */
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 10px;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Styling for disabled select element */
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.currency-converter {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  /* Add additional styles as needed */
+
+  /* Example of media queries for responsive design */
+  @media screen and (max-width: 768px) {
+    /* Apply styles for screens up to 768px wide */
+    max-width: 90%;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+
+    /* Apply styles for screens up to 480px wide */
+    /* Example: changing layout for smaller screens */
+    .currency-row-container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Additional CSS for specific elements can be added here */
